@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dessert Page</title>
+  <style>
+    /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f6ee;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Desserts Section */
+.desserts {
+  flex: 2;
+}
+
+.desserts h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.add-to-cart {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #cc5200;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity button {
+  background-color: #ccc;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.quantity span {
+  font-size: 1rem;
+}
+
+/* Cart Section */
+.cart {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.cart h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart .remove {
+  background: none;
+  border: none;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+.cart .total {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.cart .delivery-note {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.cart .confirm-order {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.cart .confirm-order:hover {
+  background-color: #cc5200;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="desserts">
+      <h1>Desserts</h1>
+      <div class="grid">
+        <!-- Dessert Cards -->
+        <div class="card">
+          <img src="assets\images\image-baklava-desktop.jpg" alt="Waffle with Berries">
+          <h3>Waffle with Berries</h3>
+          <p>$6.50</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="card active">
+          <img src="assets\images\image-brownie-desktop.jpg" alt="Vanilla Bean Crème Brûlée">
+          <h3>Vanilla Bean Crème Brûlée</h3>
+          <p>$7.00</p>
+          <div class="quantity">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets\images\image-brownie-desktop.jpg" alt="Macaron Mix of Five">
+          <h3>Macaron Mix of Five</h3>
+          <p>$8.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Add more dessert cards as needed -->
+      </div>
+    </section>
+
+    <aside class="cart">
+      <h2>Your Cart (7)</h2>
+      <ul>
+        <li>
+          <span>1x Classic Tiramisu</span>
+          <span>$5.50</span>
+          <button class="remove">×</button>
+        </li>
+        <li>
+          <span>4x Vanilla Bean Crème Brûlée</span>
+          <span>$28.00</span>
+          <button class="remove">×</button>
+        </li>
+        <li>
+          <span>2x Vanilla Panna Cotta</span>
+          <span>$13.00</span>
+          <button class="remove">×</button>
+        </li>
+      </ul>
+      <div class="total">
+        <h3>Order Total</h3>
+        <p>$46.50</p>
+      </div>
+      <div class="delivery-note">
+        <p>This is a <strong>carbon-neutral delivery</strong></p>
+      </div>
+      <button class="confirm-order">Confirm Order</button>
+    </aside>
+  </div>
+</body>
+</html>
